@@ -1413,7 +1413,7 @@ void nfa_hci_handle_admin_gate_rsp(uint8_t* p_data, uint8_t data_len) {
             /* Something wrong, NVRAM data could be corrupt or first start with
              * default session id */
             nfa_hciu_send_clear_all_pipe_cmd();
-            nfa_hci_cb.b_hci_new_sessionId = true;
+            nfa_hci_cb.b_hci_netwk_reset = true;
             if (data_len < NFA_HCI_SESSION_ID_LEN) {
               android_errorWriteLog(0x534e4554, "124524315");
             }
